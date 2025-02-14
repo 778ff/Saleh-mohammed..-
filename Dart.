@@ -1,0 +1,137 @@
+import 'package:flutter/material.dart';
+
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final con = Container(
+    color: Colors.black,
+    height: 48,
+    width: 48,
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Welcome"),
+        backgroundColor: Colors.yellow,
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              children: [
+                buildContainer(66, 50, Colors.blueAccent),
+                com(),
+                const Padding(padding: EdgeInsets.all(16)),
+                const djj(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+Widget buildContainer(double x, double y, Color color) {
+  return Container(
+    color: color,
+    height: x,
+    width: y,
+  );
+}
+
+Row com() {
+  return Row(
+    children: [
+      Container(
+        color: Colors.red, // Red container
+        height: 50, // Height of the container
+        width: 50, // Width of the container
+      ),
+      const Padding(padding: EdgeInsets.all(16)),
+      const Expanded(
+        child: Container(
+          color: Colors.blue, // Blue container
+          height: 50, // Height of the container
+        ),
+      ),
+    ],
+  );
+}
+
+class djj extends StatelessWidget {
+  const djj({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: [
+            Container(
+              color: Colors.green,
+              height: 60,
+              width: 60,
+            ),
+            const Padding(padding: EdgeInsets.all(16)),
+            Container(
+              color: Colors.blue,
+              height: 60,
+              width: 60,
+            ),
+            const Padding(padding: EdgeInsets.all(10)),
+            Container(
+              color: Colors.blue,
+              height: 30,
+              width: 30,
+            ),
+            const Divider(),
+            Row(
+              children: [],
+            ),
+            const Divider(),
+            Row(
+              children: [
+                CircleAvatar(
+                  backgroundColor: Colors.lightBlue,
+                  radius: 100.0,
+                  child: Stack(
+                    children: [
+                      Container(
+                        color: Colors.red,
+                        height: 100,
+                        width: 100,
+                      ),
+                      Container(
+                        color: Colors.blueGrey,
+                        height: 60,
+                        width: 60,
+                      ),
+                      Container(
+                        color: Colors.greenAccent,
+                        height: 40,
+                        width: 40,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+            const Divider(),
+            const Text("saleh moahmed"),
+          ],
+        ),
+      ],
+    );
+  }
+}
